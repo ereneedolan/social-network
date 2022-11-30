@@ -4,14 +4,13 @@ const reactionSchema = new Schema({
     reactionId: {type: Schema.Types.ObjectId, default: ()=>Types.ObjectId() },
     reactionBody: {type: String, required: true, minlength: 1, maxlength: 280 }, 
     username:{type: String, required: true},
-    createdAt: {type: Date, default: Date.now, getter: (date)=> new Date(date).toLocaleDateString},
-    
-})
+    createdAt: {type: Date, default: Date.now, get: (date)=> new Date(date).toLocaleDateString},
+},
 {
     toJSON: {
       getter: true,
     },
     id: false,
-  }
-
-module.exports = Schema;
+}
+)
+module.exports = reactionSchema;
