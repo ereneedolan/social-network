@@ -1,22 +1,13 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model} = require('mongoose');
+const reactionSchema = require('reaction')
 
 // Schema to create User model
-const userSchema = new Schema(
+const thoughtSchema = new Schema(
   {
-    username: {type: String, unique: true, required: true, trimmed: true },
-    email: {type: String, unique: true, required: true, match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/ , "not a valid email address" ] }, 
-    thoughts:[
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Thought',
-      },
-    ],
-    friends:[
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-      },
-    ],
+    thoughtText: {type: String, required: true, minlength: 1, maxlength: 280 },
+    createdAt: {type: Date, default: Date.now }, 
+    username:{type: String, required: true},
+    reactions: {reactionSchema}
     
   },
   {
@@ -24,6 +15,7 @@ const userSchema = new Schema(
     // Here we are indicating that we want virtuals to be included with our response, overriding the default behavior
     toJSON: {
       virtuals: true,
+      getter: true
     },
     id: false,
   }
