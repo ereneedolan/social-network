@@ -1,5 +1,5 @@
 const User = require('../models/User');
-const User = require('../models/Thought');
+const Thought = require('../models/Thought');
 
 module.exports = {
   getUsers(req, res) {
@@ -42,7 +42,7 @@ module.exports = {
         res.status(500).json(err);
       });
     },
-  // Delete a user and associated apps
+  // Delete a user and associated thoughts
   deleteUser(req, res) {
     User.findOneAndDelete({ _id: req.params.userId })
       .then((user) =>
@@ -51,6 +51,24 @@ module.exports = {
           : Thought.deleteMany({ _id: { $in: user.thoughts } })
       )
       .then(() => res.json({ message: 'User and associated thoughts deleted!' }))
+      .catch((err) => res.status(500).json(err));
+  },
+
+// adding a friend by their id, associated with the user id
+
+  addFriend(req, res) {
+    User.findOneAndUpdate({ _id: req.params.userId }, {$push:{friends: req.params.friendId} })
+      
+      .then(() => res.json({ message: 'Friend has been added to your list!' }))
+      .catch((err) => res.status(500).json(err));
+  },
+
+// deleting a friend by their id, associated with the user id  
+
+  deleteFriend(req, res) {
+    User.findOneAndUpdate({ _id: req.params.userId }, {$pull:{friends: req.params.friendId} })
+      
+      .then(() => res.json({ message: 'Friend removed from your list!' }))
       .catch((err) => res.status(500).json(err));
   },
 };
