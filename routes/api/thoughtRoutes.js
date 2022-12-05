@@ -4,10 +4,10 @@ const {
   getSingleThought,
   createThought,
   updateThought, 
-  deleteThought, 
+  deleteThought,   
   addReaction,
   deleteReaction
-} = require('../../controllers/ThoughtController');
+} = require('../../controllers/thoughtController');
 
 // /api/Thoughts
 router.route('/').get(getThoughts).post(createThought);

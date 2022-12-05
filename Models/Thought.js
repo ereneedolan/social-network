@@ -6,7 +6,7 @@ const thoughtSchema = new Schema(
   {
     thoughtText: {type: String, required: true, minlength: 1, maxlength: 280 },
     createdAt: {type: Date, default: Date.now, get: date => new Date(date).toLocaleDateString()}, 
-    username:{type: String, required: true},
+    username:{type: String},
     reactions: [reactionSchema]
     
   },
@@ -25,7 +25,7 @@ thoughtSchema
   .virtual('reactionCount')
   // Getter
   .get(function () {
-    return this.reaction.length;
+    return this.reactions.length;
   })
  
 // Initialize our Thought model

@@ -1,7 +1,7 @@
 {
-  "name": "25-Ins_Mongoose-CRUD",
+  "name": "Social Network",
   "version": "1.0.1",
-  "description": "Instructor demo for CRUD operations in Mongoose on subdocuments",
+  "description": "Social Network",
   "main": "server.js",
   "license": "MIT",
   "scripts": {
