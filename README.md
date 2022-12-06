@@ -15,11 +15,11 @@ For this project I used Express.js and Mongoose packages
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+N/A
 
 ## Usage
 
-N/A
+Here is a video walking through the steps of testing the routes in insomnia: https://drive.google.com/file/d/1Tc9fQ_U9iZcAwH9k6OejL1CXGDsEz9g0/view
 
 ## Credits
 
@@ -27,18 +27,15 @@ I was the sole collaborator on this repo.
 
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
 
 
 ## Badges
 
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
 
- Check out the badges hosted by [shields.io](https://shields.io/).
 
 ## Features
 
-If your project has a lot of features, list them here.
+N/A
 
 ## How to Contribute
 
