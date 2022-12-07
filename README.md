@@ -21,7 +21,7 @@ Run ```npm i``` to install the dependencies.
 
 ## Usage
 
-Here is a video walking through the steps of testing the routes in insomnia: https://drive.google.com/file/d/1Tc9fQ_U9iZcAwH9k6OejL1CXGDsEz9g0/view
+Here is a video walking through the steps of testing the routes in insomnia: https://drive.google.com/file/d/1IVrpD3aIBeE0e0H6dK2dcAvIY2uZa4F8/view
 
 ## Credits
 
